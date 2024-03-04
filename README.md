@@ -3,6 +3,9 @@
 This project demonstrates the integration of Yii3 packages with a WordPress website. It aims to showcase how Yii3
 functionalities can be utilized within a WordPress environment to enhance functionality and streamline development.
 
+It was created as an example demonstrating the approach explained
+on [Integrating Yii3 packages into WordPress](https://glpzzz.dev/2024/03/03/integrating-yii3-packages-into-wordpress.html).
+
 ## Objective
 
 The primary goal of this project is to leverage Yii3 packages to handle complex operations within a WordPress site,
