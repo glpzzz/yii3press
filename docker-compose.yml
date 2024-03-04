@@ -1,0 +1,30 @@
+version: '3.2'
+
+services:
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=verysecret
+      - MYSQL_DATABASE=yii3press
+      - MYSQL_USER=yii3press
+      - MYSQL_PASSWORD=secret
+    ports:
+      - "33063:3306"
+    volumes:
+      - web_data:/var/lib/mysql
+
+  app:
+    depends_on:
+      - mysql
+    build: ./
+    ports:
+      - "23080:80"
+    volumes:
+      # Re-use local composer cache via host-volume
+      - ~/.composer-docker/cache:/root/.composer/cache:delegated
+      # Mount source-code for development
+      - ./:/var/www/html
+
+volumes:
+  web_data:

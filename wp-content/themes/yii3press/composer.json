@@ -1,0 +1,22 @@
+{
+    "name": "glpzzz/yii3press",
+    "description": "Support project of the Yii3Press sample Wordpress theme",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Glpzzz\\Yii3press\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Gabriel Alejandro López López",
+            "email": "glpz@daxslab.com"
+        }
+    ],
+    "require": {
+        "yiisoft/form-model": "dev-master",
+        "yiisoft/validator": "^1.2",
+        "yiisoft/form": "dev-master"
+    }
+}

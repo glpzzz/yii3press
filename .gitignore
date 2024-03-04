@@ -1,0 +1,24 @@
+# Ignore everything in the project root
+/*
+
+!.gitignore
+
+# Except for the Docker files
+!Dockerfile
+!docker-compose.yml
+
+# composer files
+!composer.json
+!composer.lock
+
+# The readme
+!README.md
+
+# The theme
+!wp-content/
+wp-content/*
+!wp-content/themes/
+wp-content/themes/*
+!wp-content/themes/yii3press
+!wp-content/themes/yii3press/*
+/wp-content/themes/yii3press/vendor/
