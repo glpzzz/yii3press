@@ -6,6 +6,7 @@
 # Except for the Docker files
 !Dockerfile
 !docker-compose.yml
+!entrypoint.sh
 
 # composer files
 !composer.json

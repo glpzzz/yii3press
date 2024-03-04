@@ -20,13 +20,15 @@ RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli
     chmod +x wp-cli.phar && \
     mv wp-cli.phar /usr/local/bin/wp
 
-# setup wordpress website and page
-RUN wp core download --path=/var/www/html --allow-root && \
-    wp config create --dbhost=mysql --dbname=yii3press --dbuser=yii3press --dbpass=secret --force --allow-root && \
-    wp core install --url=127.0.0.1:23080 --title="Yii3 Press" --admin_user=yii3press --admin_password=yii3press --admin_email=admin@localhost.com --skip-email --allow-root && \
-    wp post create --post_type=page --post_title='The Rating Form' --post_status="publish" --allow-root && \
-    wp theme activate yii3press
-
 # install composer
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
-    php composer-setup.php --install-dir=/usr/local/bin --filename=composer && \
+    php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+
+# Copy custom entrypoint script
+COPY entrypoint.sh /usr/local/bin/
+
+# Make the entrypoint script executable
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
+# Set the entrypoint to our custom script
+CMD ["entrypoint.sh"]
