@@ -20,11 +20,6 @@ $hydrator = new Hydrator(
 	)
 );
 
-if (!defined('INSUREMART_VERSION')) {
-	// Replace the version number of the theme on each release.
-	define('INSUREMART_VERSION', '1.0.0');
-}
-
 add_action('after_setup_theme', function () {
 	add_theme_support('title-tag');
 	add_theme_support('html5');
