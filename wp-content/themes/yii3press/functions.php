@@ -45,12 +45,7 @@ add_filter('template_redirect', function () use ($hydrator) {
 			/** @var FormModel $form */
 			global $form;
 			if ($form === null) {
-				$form = $hydrator->create(RatingForm::class, $_REQUEST['data'] ?? []);
-			}
-
-
-			if (isset($_REQUEST['data'])) {
-				(new Yiisoft\Validator\Validator())->validate($form);
+				$form = $hydrator->create(RatingForm::class, []);
 			}
 		}
 	}
